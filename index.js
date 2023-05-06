@@ -10,7 +10,9 @@ const cors = require('cors');
 const path = require("path");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+	origin: ["http://localhost:5000", "https://blog-website.onrender.com"],
+}));
 app.use(express.json());
 
 app.use("/images", express.static(path.join(__dirname, "/images")));
